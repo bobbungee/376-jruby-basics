@@ -3,6 +3,7 @@ require "java"
 java_import javax.swing.JFrame
 java_import javax.swing.JButton
 java_import javax.swing.JOptionPane
+java_import javax.swing.SwingUtilities
 
 class HelloWorld < JFrame
   def initialize
@@ -23,4 +24,6 @@ class HelloWorld < JFrame
   end
 end
 
-HelloWorld.new
+SwingUtilities.invokeLater do
+  HelloWorld.new
+end
